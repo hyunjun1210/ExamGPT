@@ -149,6 +149,81 @@ dialog { max-height: min(85dvh, calc(100dvh - 30px)); }
   .review-title { align-items: center; flex-wrap: wrap; }
   .review-title label { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; }
 }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.progress-line{display:block;height:5px;border-radius:99px;background:var(--line);overflow:hidden}.progress-line i{display:block;height:100%;border-radius:inherit;background:var(--unit,var(--accent));transition:width .4s ease}
+.hero-next{margin-top:14px;font-size:13px;color:var(--muted)}.hero-next a{color:var(--accent-ink);font-weight:700}.hero-next a:hover{text-decoration:underline}
+.home-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:22px 0 32px}.home-stats .stat-card{padding:13px 15px;border-radius:12px;transition:border-color .15s}.home-stats .stat-card strong{font-size:22px}.home-stats .progress-line{margin-top:7px;height:4px}
+.home-unit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.unit-card-text{flex:1;min-width:0}.unit-card .progress-line{margin-top:10px;height:4px}.unit-count{align-self:center;flex:none;font-size:12px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.course-banner{display:flex;align-items:center;gap:20px;padding:20px 22px;margin:0 0 32px;background:linear-gradient(104deg,var(--surface) 30%,var(--tint-2));border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.ring{--p:0;flex:none;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) calc(var(--p) * 1%),var(--line) 0)}.ring span{width:62px;height:62px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;gap:1px;font-variant-numeric:tabular-nums}.ring b{font-size:21px;font-weight:800;letter-spacing:-.04em}.ring small{font-size:11px;color:var(--muted);font-weight:650;margin-top:5px}
+.course-copy{flex:1;min-width:0;display:grid;gap:3px}.course-copy strong{font-size:18px;letter-spacing:-.04em;line-height:1.4}
+.course-units{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.course-unit{display:flex;align-items:center;gap:13px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;transition:border-color .15s,transform .2s,box-shadow .2s}.course-unit:hover{border-color:var(--unit);transform:translateY(-2px);box-shadow:var(--shadow)}
+.course-unit-text{flex:1;min-width:0}.course-unit-text strong{display:block;font-size:15px;letter-spacing:-.03em;line-height:1.45}.course-unit-text small{display:block;color:var(--muted);font-size:12px;margin-bottom:10px}.course-unit-count{flex:none;font-size:13px;font-weight:750;color:var(--muted);font-variant-numeric:tabular-nums}
+.lesson-back{display:inline-flex;align-items:center;gap:5px;min-height:32px;margin-bottom:8px;color:var(--muted);font-size:13px;font-weight:650}.lesson-back:hover{color:var(--accent-ink)}.lesson-back .icon{width:15px;height:15px}
+.unit-head{max-width:760px;margin-bottom:22px}.unit-head-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}.unit-head-row .unit-icon{width:50px;height:50px;border-radius:14px}.unit-head-row .unit-icon .icon{width:25px;height:25px}.unit-head h1{font-size:clamp(28px,3.6vw,40px)}.unit-head-row p{color:var(--muted);font-size:13px;margin-top:4px}
+.unit-progress{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-size:12px;color:var(--muted);font-weight:650}.unit-progress .progress-line{flex:1;max-width:320px}
+.lesson-list{list-style:none;margin:0 0 18px;padding:0;max-width:760px;display:grid;gap:8px}
+.lesson-row{display:flex;align-items:center;gap:14px;min-height:66px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;transition:border-color .15s,background .15s}.lesson-row:hover{border-color:var(--unit,var(--accent));background:var(--soft)}.lesson-row > .icon{width:16px;height:16px;color:var(--muted)}
+.lesson-index{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:750;color:var(--muted);border:1.5px solid var(--line);font-variant-numeric:tabular-nums}.lesson-index .icon{width:16px;height:16px;stroke-width:2.4}
+.lesson-row.done .lesson-index{background:var(--good-bg);border-color:transparent;color:var(--good)}.lesson-row[data-next] .lesson-index{border-color:var(--accent);color:var(--accent-ink)}.lesson-row[data-next]{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.lesson-row-text{flex:1;min-width:0}.lesson-row-text strong{display:block;font-size:15px;letter-spacing:-.03em;line-height:1.45}.lesson-row-text small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.lesson-badge{flex:none;font-size:11px;font-weight:750;padding:3px 9px;border-radius:99px;background:var(--tint);color:var(--accent-ink)}
+.note-text{flex:1;min-width:0}.note-sub{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.note-resources{margin-top:12px;display:grid;gap:6px;font-size:13px}
+.lesson{max-width:760px;margin:0 auto}.lesson-head{scroll-margin-top:80px;margin-bottom:14px}
+.lesson-title{font-size:clamp(25px,3.2vw,34px);letter-spacing:-.055em;line-height:1.3}.lesson-sub{font-size:12px;color:var(--muted);margin:5px 0 16px}
+.step-bar{display:flex;gap:4px}.step-bar button{flex:1;min-width:0;height:22px;padding:0;border:0;background:none;display:flex;align-items:center;border-radius:4px}.step-bar button span{display:block;width:100%;height:5px;border-radius:99px;background:var(--line);transition:background .25s,transform .25s}.step-bar button.seen span{background:color-mix(in srgb,var(--accent) 40%,var(--line))}.step-bar button.good span{background:var(--good)}.step-bar button.bad span{background:var(--bad)}.step-bar button[aria-current] span{background:var(--accent);transform:scaleY(1.6)}.step-bar button:hover span{background:color-mix(in srgb,var(--accent) 70%,var(--line))}
+.step-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;font-size:13px;color:var(--accent-ink)}.step-label b{font-weight:750}
+.recall-toggle{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:12px;font-weight:700}.recall-toggle:hover{border-color:var(--accent);color:var(--accent-ink)}.recall-toggle[aria-pressed=true]{background:var(--accent-strong);color:#fff;border-color:transparent}[data-theme=dark] .recall-toggle[aria-pressed=true]{color:var(--bg)}.recall-toggle .icon{width:15px;height:15px}
+.lesson-viewport{overflow-x:clip;margin:0 -12px;padding:4px 12px 24px}#main:focus{outline:none}
+.step-card{position:relative;min-height:340px;padding:34px 34px 30px;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 1px 2px #21163508,0 12px 28px -18px #21163540;touch-action:pan-y;user-select:text}.step-card:focus{outline:none}
+.step-kicker{font-size:12px;font-weight:750;color:var(--accent-ink);margin-bottom:8px}.step-title{font-size:clamp(22px,2.8vw,28px);line-height:1.4;margin-bottom:18px}.step-lead{font-size:14px;color:var(--muted);margin:0 0 14px}
+.q-mark{display:inline-grid;place-items:center;width:30px;height:30px;margin-right:9px;border-radius:9px;background:var(--accent-strong);color:#fff;font-size:15px;vertical-align:3px}[data-theme=dark] .q-mark{color:var(--bg)}
+.keyword-chips{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}.keyword-chips li{padding:7px 14px;border-radius:99px;background:var(--tint-2);border:1px solid var(--line);color:var(--ink);font-size:14px;font-weight:650;line-height:1.45}
+.fact-list{margin:0;border-top:1px solid var(--line)}.fact-list div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}.fact-list dt{color:var(--muted);font-weight:650}.fact-list dd{margin:0;color:var(--ink)}.fact-list small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.lesson-terms{margin:0;display:grid;gap:24px}.lesson-term + .lesson-term{padding-top:24px;border-top:1px solid var(--line)}.term-name{font-size:24px;font-weight:800;letter-spacing:-.05em;line-height:1.35;color:var(--ink);margin-bottom:8px}.term-def{margin:0;font-size:17px;line-height:1.85;color:var(--body)}.term-def:focus{outline:none}
+.reveal{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:8px 16px;border-radius:12px;border:1.5px dashed color-mix(in srgb,var(--accent) 55%,var(--line));background:var(--tint-2);color:var(--accent-ink);font-size:14px;font-weight:700}.reveal:hover{border-style:solid}.reveal .icon{width:16px;height:16px}
+.answer-box{margin:0 0 16px;padding:18px 20px;border-radius:14px;background:var(--tint-2);border:1px solid color-mix(in srgb,var(--accent) 25%,var(--line))}.answer-box:focus{outline:none}.answer-label{display:block;font-size:11px;font-weight:800;color:var(--accent-ink);letter-spacing:.08em;margin-bottom:6px}.answer-box p{color:var(--ink);font-size:19px;font-weight:750;letter-spacing:-.035em;line-height:1.6}.answer-box p span{display:block}
+.cue-line{font-size:clamp(18px,2.3vw,22px);font-weight:750;line-height:1.65;letter-spacing:-.04em;color:var(--ink);padding:16px 20px;border-radius:14px;background:var(--tint-2);border-left:4px solid var(--accent);margin-bottom:20px}
+.resources{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:grid;gap:8px;font-size:13px}.resources .source-line,.note-resources .source-line,.resources .excel-example,.note-resources .excel-example{margin:0}
+.quiz-prompt{font-size:clamp(19px,2.4vw,23px);line-height:1.55;letter-spacing:-.04em;margin-bottom:20px}.quiz-choices{display:grid;gap:9px}
+.quiz-choice{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:11px 14px;text-align:left;border:1.5px solid var(--line);border-radius:13px;background:var(--surface);color:var(--body);font-size:15px;line-height:1.5;transition:border-color .15s,background .15s,transform .1s,opacity .2s}.quiz-choice:hover:not([aria-disabled=true]){border-color:var(--accent);background:var(--soft)}.quiz-choice:active:not([aria-disabled=true]){transform:scale(.985)}.quiz-choice[aria-disabled=true]{cursor:default}
+.choice-text{flex:1;min-width:0}.quiz-choice > .icon{width:19px;height:19px;stroke-width:2.3}
+.quiz-choice.correct{border-color:var(--good);background:var(--good-bg);color:var(--ink)}.quiz-choice.correct > .icon{color:var(--good)}.quiz-choice.correct .choice-key{background:var(--good);color:var(--surface);border-color:transparent}
+.quiz-choice.wrong{border-color:var(--bad);background:var(--bad-bg);color:var(--ink)}.quiz-choice.wrong > .icon{color:var(--bad)}.quiz-choice.wrong .choice-key{background:var(--bad);color:var(--surface);border-color:transparent}.quiz-choice.dim{opacity:.5}
+.feedback{margin-top:16px;padding:15px 17px;border-radius:13px;font-size:14px;line-height:1.75}.feedback:empty{display:none}.feedback:focus{outline:none}.feedback.good{background:var(--good-bg)}.feedback.bad{background:var(--bad-bg)}.feedback strong{display:flex;align-items:center;gap:6px;font-size:15px;margin-bottom:3px}.feedback strong .icon{stroke-width:2.4}.feedback.good strong{color:var(--good)}.feedback.bad strong{color:var(--bad)}.feedback .small{margin-top:4px}
+.done-mark{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:2px 0 16px;background:var(--good-bg);color:var(--good)}.done-mark .icon{width:32px;height:32px;stroke-width:2.4}.done-score{font-size:15px;margin:-6px 0 8px}.done-score b{color:var(--ink)}
+.next-card{display:flex;align-items:center;gap:12px;margin:20px 0 16px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--soft);transition:border-color .15s,transform .2s}.next-card:hover{border-color:var(--accent);transform:translateX(2px)}.next-card span{flex:1;min-width:0}.next-card small{display:block;font-size:12px;color:var(--muted);font-weight:650}.next-card strong{display:block;font-size:16px;letter-spacing:-.03em;line-height:1.45}.next-card > .icon{color:var(--accent)}
+.lesson-nav{position:sticky;bottom:0;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:10px 0 14px;background:linear-gradient(to bottom,transparent,var(--bg) 35%)}.lesson-nav .button{min-height:46px;padding:10px 18px;border-radius:12px;font-size:14px}#lesson-prev{justify-self:start}#lesson-next{justify-self:end;min-width:132px}
+.lesson-pos{font-size:13px;color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums;text-align:center}.lesson-tip{text-align:center;font-size:12px;color:var(--muted)}.lesson-tip .touch{display:none}
+@media (pointer:coarse){.lesson-tip .keys{display:none}.lesson-tip .touch{display:inline}}
+.side-text{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.side-count{font-size:11px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}.side-link[aria-current=true]{color:var(--accent-ink);font-weight:750}
+.side-lessons{display:grid;gap:1px;margin:2px 0 8px 15px;padding-left:8px;border-left:1px solid var(--line)}.side-lesson{display:flex;align-items:center;gap:8px;min-height:32px;padding:5px 8px;border-radius:7px;font-size:12px;color:var(--muted);line-height:1.4}.side-lesson:hover{background:var(--line);color:var(--ink)}.side-lesson[aria-current=page]{background:var(--tint);color:var(--accent-ink);font-weight:700}
+.side-check{flex:none;width:15px;height:15px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center}.side-lesson.done .side-check{background:var(--good);border-color:transparent;color:var(--surface)}.side-check .icon{width:10px;height:10px;stroke-width:3}
+@media (max-width:1110px){.home-unit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:768px){
+  .home-stats{margin:16px 0 24px;gap:9px}
+  .course-banner{flex-wrap:wrap;padding:16px;gap:14px;margin-bottom:24px}.course-banner .button{width:100%}
+  .course-units{grid-template-columns:minmax(0,1fr)}
+  .unit-head-row .unit-icon{width:44px;height:44px}
+  .lesson-row{min-height:62px;padding:11px 13px;gap:12px}
+  .lesson-sub{margin-bottom:12px}
+  .step-bar button{height:26px}
+  .recall-toggle{min-height:40px}
+  .lesson-viewport{margin:0 -8px;padding:4px 8px 12px}
+  .step-card{min-height:0;padding:24px 19px 22px;border-radius:18px}
+  .term-name{font-size:21px}.term-def{font-size:16px;line-height:1.8}
+  .lesson-terms{gap:20px}.lesson-term + .lesson-term{padding-top:20px}
+  .fact-list div{grid-template-columns:76px minmax(0,1fr)}
+  .answer-box p{font-size:17px}
+  .quiz-choice{min-height:52px}
+  .lesson-nav{position:fixed;inset:auto 0 0;padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:var(--surface);border-top:1px solid var(--line)}
+  #lesson-next{min-width:120px}
+  .workspace:has(.lesson){padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  .lesson-tip{display:none}
+  .side-lesson{min-height:40px;font-size:13px}
+}
+@media (max-width:480px){.home-unit-grid{grid-template-columns:minmax(0,1fr)}.lesson-nav .button{padding:10px 14px}#lesson-next{min-width:108px}.step-label{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::after,*::before{transition:none!important;scroll-behavior:auto!important}}
 
 :root{--accent:#26765f;--accent-strong:#236b57;--accent-ink:#165b48;--tint:#e3f2ec;--tint-2:#eff8f4;--side:#f2f6f4;--line:#dfeae4}
@@ -207,14 +282,37 @@ const units = [
   {id:'chart',title:'차트',subtitle:'종류 · 눈금선 · 이동 · 범례',icon:'monitor',color:'#a04c68'}
 ];
 
+const sheet = {
+  'goal-menu':['목표값 찾기 메뉴 경로','데이터 → 가상 분석 → 목표값 찾기'],
+  'goal-dialog':['목표값 찾기 대화상자 설명','수식 셀: 수식이 들어 있는 셀 / 찾는 값: 수식이 가져야 할 목표 값'],
+  'filter-or':['고급 필터 OR(또는) 조건 만드는 방법','서로 다른 행에 입력하기'],
+  'filter-copy':["고급 필터에서 '다른 장소에 복사' 할 때 해야할 것",'목록 범위, 조건 범위, 복사 위치 지정하기'],
+  'filter-heading':['고급 필터 조건 범위에서 머리글 작성 시 주의할 것','원본에 있는 머리글과 동일하게 입력해야 한다.'],
+  'subtotal-sort':['부분합에서 정렬하는 이유','같은 구분 데이터가 연속되어 있어야 그룹별로 계산돼서'],
+  'subtotal-add':['부분합을 추가로 만들 때 해야 할 것',"'새로운 값으로 대치' 체크 끄기"],
+  'subtotal-outline':['부분합에서 개요 지우는 방법','데이터 → 그룹 해제 → 개요 지우기'],
+  'pivot-insert':['피벗 테이블 메뉴 위치','삽입 → 피벗 테이블'],
+  'pivot-values':['피벗 테이블 값 내용 바꾸는 메뉴','값 필드 설정'],
+  'pivot-group':['피벗 테이블에서 숫자 그룹 만드는 메뉴','숫자 셀 우클릭 → 그룹'],
+  'pivot-empty':["빈 셀에 '**' 표시하는 방법",'피벗 테이블 옵션 → 레이아웃 및 서식 → 빈 셀 표시에 ** 입력'],
+  'pivot-merge':['피벗 테이블에서 병합 및 가운데 맞춤 하는 방법','피벗 테이블 옵션 → 레이블이 있는 셀 병합 및 가운데 맞춤'],
+  'pivot-totals':['피벗 테이블에서 행의 총합계 표시 해제하는 메뉴 위치','요약 및 필터 탭'],
+  'chart-type':['이미 만든 차트의 종류를 바꾸는 메뉴 위치','차트 디자인 → 차트 종류 변경'],
+  'chart-grid':['차트 눈금선 바꾸는 메뉴 이름','주 눈금선 서식'],
+  'chart-move':['차트를 새 시트로 옮기는 방법','차트 디자인 → 차트 이동'],
+  'chart-texture':['차트 영역을 질감 - 파랑 박엽지로 채우는 메뉴','그림 또는 질감 채우기'],
+  'chart-legend':['범례명 변경하는 메뉴 위치','차트 디자인 → 데이터 선택 → 계열 선택 → 편집'],
+  'chart-callout':["차트에 '말풍선: 모서리가 둥근 사각형 설명선' 넣는 방법",'삽입 → 일러스트레이션 → 도형']
+};
+
 const notes = [];
 const hints = [];
 const questions = [];
 
 function topic(id, unit, title, terms, cue, quiz, source = null) {
   const page = hints.length < 12 ? '정리표 1장' : '정리표 2장';
-  notes.push({id,unit,title,page,terms,cue,source});
-  hints.push([title,page,id]);
+  notes.push({id,unit,title,page,terms,cue,source,sheet:sheet[id]});
+  hints.push([sheet[id][0],page,id,sheet[id][1]]);
   quiz.forEach(([prompt,correct,choices,explanation],index) => {
     const isOX = typeof correct === 'boolean';
     questions.push({
@@ -238,8 +336,7 @@ topic('goal-menu','goal','목표값 찾기 메뉴 경로',[
 
 topic('goal-dialog','goal','목표값 찾기 대화상자',[
   ['수식 셀','결과를 계산하는 수식이 들어 있는 셀을 지정한다.'],
-  ['찾는 값','해당 수식이 가져야 할 목표 결과값을 숫자로 입력한다.'],
-  ['값을 바꿀 셀','수식이 참조하는 입력 셀 중 Excel이 조정할 셀이다.']
+  ['찾는 값','해당 수식이 가져야 할 목표 결과값을 숫자로 입력한다.']
 ], '수식 셀 = 계산 위치 · 찾는 값 = 목표 숫자', [
   ['목표값 찾기에서 찾는 값에 입력할 내용은?', '수식의 목표 결과값', ['수식의 셀 주소','값을 바꿀 셀의 주소','현재 계산 결과의 셀 서식'], '찾는 값에는 수식이 도달해야 하는 숫자를 적는다.'],
   ['C2에 수식이 있고, B2를 조정해 C2의 결과를 300으로 만들려고 한다. 수식 셀과 찾는 값은?', '수식 셀 C2, 찾는 값 300', ['수식 셀 B2, 찾는 값 300','수식 셀 C2, 찾는 값 B2','수식 셀 300, 찾는 값 C2'], '수식이 들어 있는 C2를 지정하고 목표 결과 300을 입력한다. B2는 값을 바꿀 셀이다.'],
@@ -436,7 +533,10 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
     external:'<path d="M14 3h7v7m0-7-9 9m7 0v8H4V5h8"/>',
     save:'<path d="M5 4h12l3 3v13H4V4zM8 4v6h8V4m-8 16v-6h8v6"/>',
     clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-    check:'<path d="m5 12 4 4L19 6"/>'
+    check:'<path d="m5 12 4 4L19 6"/>',
+    play:'<path d="M8 5v14l11-7z"/>',
+    doc:'<path d="M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7"/>',
+    eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>'
   };
   const icon = name => `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]}</svg>`;
   const byId = id => document.getElementById(id);
@@ -444,8 +544,8 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
   const unitById = new Map(units.map(item => [item.id,item]));
   const questionById = new Map(questions.map(item => [item.id,item]));
   const primaryNav = [
-    ['home','홈','home'],['notes','개념 정리','book'],['exam','랜덤 모의고사','shuffle'],
-    ['wrong','오답 노트','undo'],['hints','시험 힌트','list']
+    ['home','홈','home'],['notes','개념 학습','book'],['summary','요약 노트','doc'],
+    ['exam','랜덤 모의고사','shuffle'],['wrong','오답 노트','undo'],['hints','시험 힌트','list']
   ];
   const main = byId('main');
   const mobile = matchMedia('(max-width: 768px)');
@@ -505,11 +605,38 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
     </details>`;
   }
 
-  const noteHref = id => '#notes/' + id;
+  const noteHref = id => '#learn/' + id;
   const unitStyle = unit => `style="--unit:${unit.color}"`;
   const unitIcon = unit => `<span class="unit-icon" ${unitStyle(unit)}>${icon(unit.icon)}</span>`;
   const noteLink = id => `<a class="text-link" href="${noteHref(id)}">개념 보기 ${icon('right')}</a>`;
   const questionUnit = question => unitById.get(noteById.get(question.noteId).unit);
+
+  const subject = {
+    name:'사무행정', tagline:'2회고사 노트', icon:'layout',
+    heroTitle:'사무행정<br><span>2회고사 대비</span>',
+    heroArt:'<div class="sheet-preview"><div class="sheet-preview-top"></div><div class="sheet-preview-grid"><i></i></div></div>',
+    lede:'정리표 두 장의 20개 항목을 한 장씩 넘기며 외우고, 확인 문제와 모의고사로 점검하세요.',
+    flow:'정리표 문제 → 자세히 보기 → 확인 문제'
+  };
+  const hasSummaryStep = false;
+  const introLabel = '정리표 문제';
+  const pageLabel = note => note.page;
+  const noteResources = note => renderSource(note.source);
+  let viewportObserver;
+
+  function mountHeroArt() {}
+
+  function renderIntro(note) {
+    const [question,answer] = note.sheet;
+    const hidden = lessons.recall && !lesson.revealed.has('sheet');
+    return `<p class="step-kicker">정리표 ${pad(hintNumber.get(note.id))}번 · ${note.page}</p>
+      <h2 class="step-title"><span class="q-mark" aria-hidden="true">Q</span>${question}</h2>
+      ${hidden ? revealButton('sheet','정답 확인하기') : `<div class="answer-box" data-revealed="sheet" tabindex="-1">
+        <span class="answer-label">정답</span>
+        <p>${answer.split(' / ').map(part => `<span>${part}</span>`).join('')}</p>
+      </div>
+      <div class="callout"><strong>암기 단서</strong> ${note.cue}</div>`}`;
+  }
 
   function setNavOpen(open) {
     const sidebar = byId('sidebar');
@@ -530,22 +657,613 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
     }
   }
 
-  function renderSidebar(view, unit) {
+  const lessonKey = storageKey.replace('-study-','-lessons-');
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const stepCache = new Map();
+  const hintNumber = new Map();
+  hints.forEach((hint,index) => { if (!hintNumber.has(hint[2])) hintNumber.set(hint[2],index + 1); });
+  const pad = number => String(number).padStart(2,'0');
+  const unitNotes = unitId => notes.filter(note => note.unit === unitId);
+  const noteQuestions = id => questions.filter(question => question.noteId === id);
+  const doneCount = list => list.filter(note => lessons.done[note.id]).length;
+  const nextNote = note => notes[notes.indexOf(note) + 1] ?? null;
+  const revealButton = (key,label) => `<button type="button" class="reveal" data-reveal="${key}">${icon('eye')} ${label}</button>`;
+  let lessons = readLessons();
+  let lesson = null;
+  let suppressClickUntil = 0;
+
+  function readLessons() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(lessonKey));
+      if (stored && typeof stored.done === 'object' && stored.done) {
+        for (const id of Object.keys(stored.done)) {
+          if (!noteById.has(id)) delete stored.done[id];
+        }
+        const last = stored.last && noteById.has(stored.last.id) ? stored.last : null;
+        return {done:stored.done, last, recall:Boolean(stored.recall)};
+      }
+    } catch {}
+    return {done:{}, last:null, recall:false};
+  }
+
+  function saveLessons() {
+    try { localStorage.setItem(lessonKey, JSON.stringify(lessons)); } catch {}
+  }
+
+  function resumeNote(list = notes) {
+    const last = lessons.last ? noteById.get(lessons.last.id) : null;
+    const inList = Boolean(last) && list.includes(last);
+    if (inList && !lessons.done[last.id]) return last;
+    const start = inList ? list.indexOf(last) + 1 : 0;
+    return [...list.slice(start), ...list.slice(0,start)].find(note => !lessons.done[note.id]) ?? null;
+  }
+
+  function lessonCta(list = notes) {
+    const note = resumeNote(list);
+    if (!note) return {href:'#learn/' + list[0].id, label:'처음부터 복습', note:null};
+    const started = list.some(item => lessons.done[item.id] || lessons.last?.id === item.id);
+    return {href:'#learn/' + note.id, label:started ? '이어서 학습' : '학습 시작', note};
+  }
+
+  function renderSidebar(view, unit, noteId) {
+    const inCourse = view === 'notes' || view === 'learn';
     byId('sidebar').innerHTML = `
       <div class="sidebar-head">
-        <a class="brand" href="#home"><span class="brand-mark">${icon('layout')}</span><span><strong>사무행정</strong><small>2회고사 노트</small></span></a>
+        <a class="brand" href="#home"><span class="brand-mark">${icon(subject.icon)}</span><span><strong>${subject.name}</strong><small>${subject.tagline}</small></span></a>
         <button class="icon-button drawer-close" id="close-menu" type="button" aria-label="메뉴 닫기">${icon('close')}</button>
       </div>
       <div class="side-label">학습</div>
       <nav class="side-nav" aria-label="학습 기능">
         <a class="side-link" href="index.html">${icon('left')}과목 책장</a>
-        ${primaryNav.map(([id,title,symbol]) => `<a href="#${id}" class="side-link" ${view === id || (id === 'exam' && view === 'result') ? 'aria-current="page"' : ''}>${icon(symbol)}${title}</a>`).join('')}
+        ${primaryNav.map(([id,title,symbol]) => {
+          const current = view === id || (id === 'exam' && view === 'result') || (id === 'notes' && view === 'learn');
+          return `<a href="#${id}" class="side-link" ${current ? 'aria-current="page"' : ''}>${icon(symbol)}${title}</a>`;
+        }).join('')}
       </nav>
       <div class="side-label">단원</div>
       <nav class="side-nav" aria-label="단원 목록">
-        ${units.map(item => `<a href="#notes/${item.id}" class="side-link" ${view === 'notes' && item.id === unit ? 'aria-current="page"' : ''}><span class="topic-dot" ${unitStyle(item)}></span>${item.title}</a>`).join('')}
+        ${units.map(item => {
+          const list = unitNotes(item.id);
+          const open = inCourse && item.id === unit;
+          const current = open ? (view === 'notes' ? 'aria-current="page"' : 'aria-current="true"') : '';
+          return `<a href="#notes/${item.id}" class="side-link" ${current}><span class="topic-dot" ${unitStyle(item)}></span><span class="side-text">${item.title}</span><span class="side-count">${doneCount(list)}/${list.length}</span></a>
+          ${open ? `<div class="side-lessons">${list.map(note => `<a href="#learn/${note.id}" class="side-lesson ${lessons.done[note.id] ? 'done' : ''}" ${note.id === noteId ? 'aria-current="page"' : ''}><span class="side-check">${lessons.done[note.id] ? icon('check') : ''}</span><span>${note.title}</span></a>`).join('')}</div>` : ''}`;
+        }).join('')}
       </nav>
       <div class="side-foot">${icon('save')} <span id="storage-label">${storageAvailable ? '이 브라우저에 학습 기록 저장' : '현재 탭에만 기록 유지'}</span></div>`;
+  }
+
+  function renderHome() {
+    const latest = state.latest;
+    const done = doneCount(notes);
+    const cta = lessonCta(notes);
+    const examLabel = state.session ? '모의고사 이어 풀기' : '모의고사 풀기';
+    const ctaLabel = cta.note ? (cta.label === '학습 시작' ? '개념 학습 시작' : cta.label) : cta.label;
+    main.innerHTML = `
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true">${subject.heroArt}</div>
+        <div class="hero-content">
+          <h1 class="hero-title" id="hero-title">${subject.heroTitle}</h1>
+          <p>${subject.lede}</p>
+          <div class="actions">
+            <a class="button primary" href="${cta.href}">${icon('play')} ${ctaLabel}</a>
+            <a class="button" href="#exam">${icon('shuffle')} ${examLabel}</a>
+          </div>
+          ${cta.note ? `<p class="hero-next">다음 개념 · <a href="${cta.href}">${cta.note.title}</a></p>` : ''}
+        </div>
+      </section>
+      <div class="home-stats">
+        <a class="stat-card" href="#notes"><span>개념 학습</span><strong>${done}/${notes.length}</strong><span class="progress-line" aria-hidden="true"><i style="width:${done / notes.length * 100}%"></i></span></a>
+        <a class="stat-card" href="${latest ? '#result' : '#exam'}"><span>최근 점수</span><strong>${latest ? latest.score + '점' : '—'}</strong></a>
+        <a class="stat-card" href="#wrong"><span>다시 풀 오답</span><strong>${Object.keys(state.wrong).length}문제</strong></a>
+        <a class="stat-card" href="#hints"><span>시험 힌트</span><strong>${hints.length}개</strong></a>
+      </div>
+      <section aria-labelledby="home-notes">
+        <div class="section-head"><h2 id="home-notes">단원별 개념 학습</h2><a class="text-link" href="#notes">전체 보기 ${icon('right')}</a></div>
+        <div class="unit-grid home-unit-grid">
+          ${units.map(unit => {
+            const list = unitNotes(unit.id);
+            const count = doneCount(list);
+            return `<a class="unit-card" href="#notes/${unit.id}" ${unitStyle(unit)}>
+              ${unitIcon(unit)}<span class="unit-card-text"><strong>${unit.title}</strong><small>${unit.subtitle}</small><span class="progress-line" aria-hidden="true"><i style="width:${count / list.length * 100}%"></i></span></span><span class="unit-count" aria-label="${list.length}개 중 ${count}개 완료">${count}/${list.length}</span>
+            </a>`;
+          }).join('')}
+        </div>
+      </section>`;
+    mountHeroArt();
+  }
+
+  function renderCourse() {
+    const total = notes.length;
+    const done = doneCount(notes);
+    const cta = lessonCta(notes);
+    const percent = Math.round(done / total * 100);
+    const headline = done === total ? '모든 개념을 학습했어요' : done ? `${total - done}개 개념이 남았어요` : '첫 개념부터 시작해 보세요';
+    main.innerHTML = pageHead('개념 학습',`${total}개 개념을 한 단계씩 넘기며 익혀요. ${subject.flow} 순서로 진행합니다.`) + `
+      <section class="course-banner" aria-label="전체 진도">
+        <div class="ring" style="--p:${percent}" role="img" aria-label="${total}개 중 ${done}개 완료"><span><b>${done}</b><small>/${total}</small></span></div>
+        <div class="course-copy"><strong>${headline}</strong>${cta.note ? `<span class="small muted">다음 · ${cta.note.title}</span>` : '<span class="small muted">모의고사로 실력을 점검해 보세요.</span>'}</div>
+        <a class="button primary" href="${cta.href}">${icon('play')} ${cta.label}</a>
+      </section>
+      <div class="section-head"><h2>단원</h2><a class="text-link" href="#summary">요약 노트로 훑어보기 ${icon('right')}</a></div>
+      <div class="course-units">
+        ${units.map(unit => {
+          const list = unitNotes(unit.id);
+          const count = doneCount(list);
+          return `<a class="course-unit" href="#notes/${unit.id}" ${unitStyle(unit)}>
+            ${unitIcon(unit)}
+            <span class="course-unit-text"><strong>${unit.title}</strong><small>${unit.subtitle}</small><span class="progress-line" aria-hidden="true"><i style="width:${count / list.length * 100}%"></i></span></span>
+            <span class="course-unit-count" aria-label="${list.length}개 중 ${count}개 완료">${count}/${list.length}</span>
+          </a>`;
+        }).join('')}
+      </div>`;
+  }
+
+  function renderUnit(unit) {
+    const list = unitNotes(unit.id);
+    const count = doneCount(list);
+    const cta = lessonCta(list);
+    const quizCount = list.reduce((sum,note) => sum + noteQuestions(note.id).length,0);
+    main.innerHTML = `
+      <header class="unit-head" ${unitStyle(unit)}>
+        <a class="lesson-back" href="#notes">${icon('left')} 개념 학습</a>
+        <div class="unit-head-row">${unitIcon(unit)}<div><h1>${unit.title}</h1><p>${unit.subtitle} · 개념 ${list.length}개 · 확인 문제 ${quizCount}개</p></div></div>
+        <div class="unit-progress"><span class="progress-line" aria-hidden="true"><i style="width:${count / list.length * 100}%"></i></span><span>${list.length}개 중 ${count}개 완료</span></div>
+        <div class="actions">
+          <a class="button primary" href="${cta.href}">${icon('play')} ${cta.label}</a>
+          <a class="button" href="#exam/${unit.id}">${icon('shuffle')} 단원 모의고사</a>
+        </div>
+      </header>
+      <ol class="lesson-list" ${unitStyle(unit)} aria-label="${unit.title} 개념 목록">
+        ${list.map((note,index) => {
+          const record = lessons.done[note.id];
+          const upNext = cta.note === note;
+          const score = record?.answered ? ` · ${record.answered}문제 중 ${record.correct}문제 정답` : '';
+          return `<li><a class="lesson-row ${record ? 'done' : ''}" href="#learn/${note.id}" ${upNext ? 'data-next' : ''}>
+            <span class="lesson-index" aria-hidden="true">${record ? icon('check') : index + 1}</span>
+            <span class="lesson-row-text"><strong>${note.title}</strong><small>${record ? '완료 · ' : ''}${pageLabel(note)} · 확인 문제 ${noteQuestions(note.id).length}개${score}</small></span>
+            ${upNext ? '<span class="lesson-badge">다음</span>' : ''}${icon('chevron')}
+          </a></li>`;
+        }).join('')}
+      </ol>
+      <p><a class="text-link" href="#summary/${unit.id}">이 단원 요약 노트 ${icon('right')}</a></p>`;
+  }
+
+  function renderSummary(unit, openId) {
+    const displayed = unit ? [unitById.get(unit)] : units;
+    main.innerHTML = pageHead('요약 노트','모든 개념을 한 페이지에 모은 요약본입니다. 시험 직전에 빠르게 훑어볼 때 쓰고, 처음 익힐 때는 단계별 학습을 이용하세요.') + `
+      <nav class="pills" aria-label="요약 노트 단원 선택">
+        <a class="pill" href="#summary" ${!unit ? 'aria-current="page"' : ''}>전체</a>
+        ${units.map(item => `<a class="pill" href="#summary/${item.id}" ${item.id === unit ? 'aria-current="page"' : ''}>${item.title}</a>`).join('')}
+      </nav>
+      ${displayed.map(item => `<section class="concept-group" aria-labelledby="head-${item.id}">
+        <div class="group-head">${unitIcon(item)}<h2 id="head-${item.id}">${item.title}</h2></div>
+        ${unitNotes(item.id).map(note => {
+          const resources = noteResources(note);
+          return `
+          <details class="note" id="${note.id}" ${note.id === openId ? 'open' : ''}>
+            <summary><span class="note-text"><span class="note-title">${note.title}</span><small class="note-sub">${note.sheet ? note.sheet[1] : note.cue}</small></span><span class="note-page">${lessons.done[note.id] ? '완료 · ' : ''}${pageLabel(note)}</span>${icon('chevron')}</summary>
+            <div class="note-body">
+              <dl class="terms">${note.terms.map(([term,definition]) => `<div class="term"><dt>${term}</dt><dd>${definition}</dd></div>`).join('')}</dl>
+              <div class="callout"><strong>암기 단서</strong> ${note.cue}</div>
+              ${resources ? `<div class="note-resources">${resources}</div>` : ''}
+              <div class="note-actions"><a class="text-link" href="#learn/${note.id}">단계별 학습 ${icon('right')}</a><a class="text-link" href="#exam/${item.id}">이 단원 문제 풀기 ${icon('right')}</a></div>
+            </div>
+          </details>`;
+        }).join('')}
+      </section>`).join('')}`;
+    if (openId) byId(openId).scrollIntoView({block:'start'});
+  }
+
+  function lessonSteps(note) {
+    if (stepCache.has(note.id)) return stepCache.get(note.id);
+    const steps = [{kind:'intro', label:introLabel}];
+    const chunks = [];
+    let chunk = [];
+    let size = 0;
+    for (const term of note.terms) {
+      const length = term[0].length + term[1].length;
+      if (chunk.length && (chunk.length === 3 || size + length > 180)) {
+        chunks.push(chunk);
+        chunk = [];
+        size = 0;
+      }
+      chunk.push(term);
+      size += length;
+    }
+    if (chunk.length) chunks.push(chunk);
+    let termIndex = 0;
+    chunks.forEach((terms,index) => {
+      const label = hasSummaryStep ? (chunks.length > 1 ? `개념 ${index + 1}/${chunks.length}` : '개념') : '자세히 보기';
+      steps.push({kind:'terms', label, terms, first:termIndex, last:index === chunks.length - 1});
+      termIndex += terms.length;
+    });
+    if (hasSummaryStep) steps.push({kind:'summary', label:'한눈에 정리'});
+    const quiz = noteQuestions(note.id);
+    quiz.forEach((question,index) => steps.push({kind:'quiz', label:`확인 문제 ${index + 1}/${quiz.length}`, question}));
+    steps.push({kind:'done', label:'완료'});
+    stepCache.set(note.id,steps);
+    return steps;
+  }
+
+  function choiceOrder(question) {
+    if (!lesson.orders.has(question.id)) {
+      lesson.orders.set(question.id, question.type === 'O/X' ? [0,1] : shuffle(question.options.map((_,index) => index)));
+    }
+    return lesson.orders.get(question.id);
+  }
+
+  function renderTermsStep(step) {
+    const note = lesson.note;
+    const resources = !hasSummaryStep && step.last ? noteResources(note) : '';
+    return `
+      <dl class="lesson-terms">
+        ${step.terms.map(([term,definition],index) => {
+          const key = 't' + (step.first + index);
+          const hidden = lessons.recall && !lesson.revealed.has(key);
+          return `<div class="lesson-term"><dt class="term-name">${term}</dt><dd class="term-def" data-revealed="${key}" tabindex="-1">${hidden ? revealButton(key,'뜻 확인하기') : definition}</dd></div>`;
+        }).join('')}
+      </dl>
+      ${resources ? `<div class="resources">${resources}</div>` : ''}`;
+  }
+
+  function renderSummaryStep() {
+    const note = lesson.note;
+    const resources = noteResources(note);
+    return `
+      <h2 class="step-title">핵심 한 줄</h2>
+      <p class="cue-line">${note.cue}</p>
+      <p class="step-lead">아래 용어를 말로 설명할 수 있다면 확인 문제로 넘어가세요.</p>
+      <ul class="keyword-chips">${note.terms.map(([term]) => `<li>${term}</li>`).join('')}</ul>
+      ${resources ? `<div class="resources">${resources}</div>` : ''}`;
+  }
+
+  function renderQuizStep(step) {
+    const question = step.question;
+    const order = choiceOrder(question);
+    const answered = lesson.answers.has(question.id);
+    const choice = lesson.answers.get(question.id);
+    const correct = answered && choice === question.answer;
+    const isOX = question.type === 'O/X';
+    const optionLabel = option => isOX ? (option === 0 ? '맞다 (O)' : '틀리다 (X)') : question.options[option];
+    return `<p class="step-kicker">${question.type}</p>
+      <h2 class="quiz-prompt" id="quiz-prompt">${question.prompt}</h2>
+      <div class="quiz-choices" role="group" aria-labelledby="quiz-prompt">
+        ${order.map((option,index) => {
+          const status = !answered ? '' : option === question.answer ? 'correct' : option === choice ? 'wrong' : 'dim';
+          const mark = status === 'correct' ? icon('check') : status === 'wrong' ? icon('close') : '';
+          return `<button type="button" class="quiz-choice ${status}" data-answer="${option}" ${answered ? 'aria-disabled="true"' : ''}>
+            <span class="choice-key" aria-hidden="true">${isOX ? question.options[option] : index + 1}</span><span class="choice-text">${optionLabel(option)}</span>${mark}
+          </button>`;
+        }).join('')}
+      </div>
+      <div class="feedback ${answered ? (correct ? 'good' : 'bad') : ''}" id="quiz-feedback" tabindex="-1">${answered ? `
+        <strong>${icon(correct ? 'check' : 'close')} ${correct ? '정답이에요' : '아쉬워요, 정답은 ' + optionLabel(question.answer)}</strong>
+        <p>${question.explanation}</p>${correct ? '' : '<p class="small muted">이 문제는 오답 노트에 담았어요.</p>'}` : ''}</div>`;
+  }
+
+  function renderDoneStep() {
+    const note = lesson.note;
+    const unit = unitById.get(note.unit);
+    const record = lessons.done[note.id];
+    const next = nextNote(note);
+    const missed = [...lesson.answers].filter(([id,choice]) => questionById.get(id).answer !== choice).length;
+    const score = record?.answered ? `확인 문제 ${record.answered}문제 중 <b>${record.correct}문제</b>를 맞혔어요.` : '확인 문제는 건너뛰었어요. 모의고사에서 다시 확인해 보세요.';
+    return `<div class="done-mark">${icon('check')}</div>
+      <p class="step-kicker">개념 완료</p>
+      <h2 class="step-title">${note.title}</h2>
+      <p class="done-score">${score}</p>
+      ${missed ? `<p><a class="text-link" href="#wrong">틀린 ${missed}문제는 오답 노트에서 다시 풀 수 있어요 ${icon('right')}</a></p>` : ''}
+      ${next ? `<a class="next-card" href="#learn/${next.id}"><span><small>다음 개념 · ${unitById.get(next.unit).title}</small><strong>${next.title}</strong></span>${icon('right')}</a>`
+        : `<a class="next-card" href="#exam"><span><small>마지막 개념까지 마쳤어요</small><strong>전체 모의고사로 점검하기</strong></span>${icon('right')}</a>`}
+      <div class="actions">
+        <a class="button" href="#exam/${unit.id}">${icon('shuffle')} ${unit.title} 모의고사</a>
+        <a class="button" href="#notes/${unit.id}">${icon('list')} 단원 목차</a>
+      </div>`;
+  }
+
+  function renderStep(step) {
+    switch (step.kind) {
+      case 'intro': return renderIntro(lesson.note);
+      case 'terms': return renderTermsStep(step);
+      case 'summary': return renderSummaryStep();
+      case 'quiz': return renderQuizStep(step);
+      default: return renderDoneStep();
+    }
+  }
+
+  function markDone() {
+    const note = lesson.note;
+    const answered = [...lesson.answers];
+    const correct = answered.filter(([id,choice]) => questionById.get(id).answer === choice).length;
+    if (answered.length || !lessons.done[note.id]) {
+      lessons.done[note.id] = {at:Date.now(), correct, answered:answered.length, total:noteQuestions(note.id).length};
+    }
+    renderSidebar('learn',note.unit,note.id);
+  }
+
+  function updateLessonChrome() {
+    const {steps,step} = lesson;
+    byId('step-bar').querySelectorAll('button').forEach((button,index) => {
+      const item = steps[index];
+      const answered = item.kind === 'quiz' && lesson.answers.has(item.question.id);
+      const correct = answered && lesson.answers.get(item.question.id) === item.question.answer;
+      button.classList.toggle('seen',lesson.seen.has(index));
+      button.classList.toggle('good',correct);
+      button.classList.toggle('bad',answered && !correct);
+      if (index === step) button.setAttribute('aria-current','step');
+      else button.removeAttribute('aria-current');
+    });
+    const current = steps[step];
+    byId('step-name').textContent = current.label;
+    byId('lesson-pos').textContent = `${step + 1} / ${steps.length}`;
+    byId('lesson-prev').disabled = step === 0;
+    const next = byId('lesson-next');
+    let label = '다음';
+    if (current.kind === 'quiz' && !lesson.answers.has(current.question.id)) label = '건너뛰기';
+    if (current.kind === 'done') label = nextNote(lesson.note) ? '다음 개념' : '모의고사';
+    next.innerHTML = `${label} ${icon('right')}`;
+    next.classList.toggle('primary',!(current.kind === 'quiz' && label === '건너뛰기'));
+    byId('step-status').textContent = `${steps.length}단계 중 ${step + 1}단계, ${current.label}`;
+  }
+
+  function drawStep(direction = 0) {
+    const stage = byId('lesson-stage');
+    if (!stage || !lesson) return;
+    const step = lesson.steps[lesson.step];
+    lesson.seen.add(lesson.step);
+    if (step.kind === 'done') markDone();
+    lessons.last = {id:lesson.note.id, step:lesson.step, at:Date.now()};
+    saveLessons();
+    stage.style.transition = '';
+    stage.style.transform = '';
+    stage.style.opacity = '';
+    stage.dataset.kind = step.kind;
+    stage.innerHTML = renderStep(step);
+    updateLessonChrome();
+    if (direction && !reduceMotion.matches) {
+      stage.animate([
+        {transform:`translateX(${direction * 36}px)`, opacity:0},
+        {transform:'none', opacity:1}
+      ], {duration:320, easing:'cubic-bezier(.2,.8,.2,1)'});
+    }
+  }
+
+  function goStep(index, direction = index > lesson?.step ? 1 : -1) {
+    if (!lesson || index < 0 || index >= lesson.steps.length || index === lesson.step) return;
+    lesson.step = index;
+    history.replaceState(null,'',`#learn/${lesson.note.id}/${index + 1}`);
+    selectedRoute = location.hash;
+    drawStep(direction);
+    const head = main.querySelector('.lesson-head');
+    if (head && head.getBoundingClientRect().top < 0) head.scrollIntoView({block:'start', behavior:reduceMotion.matches ? 'auto' : 'smooth'});
+  }
+
+  function advance() {
+    if (!lesson) return;
+    if (lesson.step < lesson.steps.length - 1) {
+      goStep(lesson.step + 1,1);
+      return;
+    }
+    const next = nextNote(lesson.note);
+    location.hash = next ? '#learn/' + next.id : '#exam';
+  }
+
+  function retreat() {
+    if (lesson && lesson.step > 0) goStep(lesson.step - 1,-1);
+  }
+
+  function answerQuiz(choice) {
+    const step = lesson?.steps[lesson.step];
+    if (step?.kind !== 'quiz' || lesson.answers.has(step.question.id)) return;
+    const question = step.question;
+    lesson.answers.set(question.id,choice);
+    if (choice === question.answer) delete state.wrong[question.id];
+    else state.wrong[question.id] = {choice, misses:(state.wrong[question.id]?.misses ?? 0) + 1};
+    saveState();
+    drawStep(0);
+    const feedback = byId('quiz-feedback');
+    feedback.focus({preventScroll:true});
+    feedback.scrollIntoView({block:'nearest', behavior:reduceMotion.matches ? 'auto' : 'smooth'});
+  }
+
+  function reveal(key) {
+    lesson.revealed.add(key);
+    drawStep(0);
+    main.querySelector(`[data-revealed="${key}"]`)?.focus({preventScroll:true});
+  }
+
+  function toggleRecall(button) {
+    lessons.recall = !lessons.recall;
+    lesson.revealed.clear();
+    saveLessons();
+    button.setAttribute('aria-pressed',String(lessons.recall));
+    drawStep(0);
+  }
+
+  function bindSwipe(stage) {
+    let drag = null;
+    const reset = () => {
+      stage.style.transition = 'transform .25s cubic-bezier(.2,.8,.2,1), opacity .25s';
+      stage.style.transform = '';
+      stage.style.opacity = '';
+    };
+    stage.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'mouse' || !event.isPrimary) return;
+      drag = {x:event.clientX, y:event.clientY, time:event.timeStamp, id:event.pointerId, dx:0, active:false};
+    });
+    stage.addEventListener('pointermove', event => {
+      if (!drag || event.pointerId !== drag.id) return;
+      const dx = event.clientX - drag.x;
+      const dy = event.clientY - drag.y;
+      if (!drag.active) {
+        if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return;
+        if (Math.abs(dy) >= Math.abs(dx)) {
+          drag = null;
+          return;
+        }
+        drag.active = true;
+        try { stage.setPointerCapture(event.pointerId); } catch {}
+      }
+      drag.dx = dx > 0 && lesson.step === 0 ? dx / 4 : dx;
+      stage.style.transition = 'none';
+      stage.style.transform = `translateX(${drag.dx}px)`;
+      stage.style.opacity = String(1 - Math.min(Math.abs(drag.dx) / stage.offsetWidth,1) * .35);
+    });
+    const finish = event => {
+      if (!drag || event.pointerId !== drag.id) return;
+      const {dx,active,time} = drag;
+      drag = null;
+      if (!active) return;
+      suppressClickUntil = Date.now() + 400;
+      const distance = Math.abs(dx);
+      const velocity = distance / Math.max(1,event.timeStamp - time);
+      const forward = dx < 0;
+      const allowed = forward || lesson.step > 0;
+      const commit = event.type === 'pointerup' && allowed && (distance > Math.min(90,stage.offsetWidth * .22) || (velocity > .5 && distance > 30));
+      if (!commit) {
+        reset();
+        return;
+      }
+      const go = () => forward ? advance() : retreat();
+      if (reduceMotion.matches) {
+        go();
+        return;
+      }
+      stage.style.transition = 'transform .18s ease-in, opacity .18s ease-in';
+      stage.style.transform = `translateX(${(forward ? -1 : 1) * stage.offsetWidth * .6}px)`;
+      stage.style.opacity = '0';
+      setTimeout(go,170);
+    };
+    stage.addEventListener('pointerup',finish);
+    stage.addEventListener('pointercancel',finish);
+    stage.addEventListener('click', event => {
+      if (Date.now() < suppressClickUntil) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
+  }
+
+  function renderLesson(note, stepParam) {
+    const steps = lessonSteps(note);
+    let step = Number.parseInt(stepParam,10) - 1;
+    if (!(step >= 0 && step < steps.length)) {
+      step = lessons.last?.id === note.id && !lessons.done[note.id] ? Math.min(lessons.last.step,steps.length - 1) : 0;
+    }
+    if (lesson?.note !== note) {
+      lesson = {note, steps, step, answers:new Map(), orders:new Map(), revealed:new Set(), seen:new Set()};
+      for (let index = 0; index < step; index++) lesson.seen.add(index);
+    } else {
+      lesson.step = step;
+    }
+    const unit = unitById.get(note.unit);
+    const position = notes.indexOf(note) + 1;
+    main.innerHTML = `
+      <div class="lesson" ${unitStyle(unit)}>
+        <header class="lesson-head">
+          <a class="lesson-back" href="#notes/${unit.id}">${icon('left')} ${unit.title}</a>
+          <h1 class="lesson-title">${note.title}</h1>
+          <p class="lesson-sub">${position}번째 개념 · 전체 ${notes.length}개 · ${pageLabel(note)}</p>
+          <div class="step-bar" id="step-bar" role="group" aria-label="학습 단계로 이동">
+            ${steps.map((item,index) => `<button type="button" data-goto="${index}" aria-label="${index + 1}단계 ${item.label}" title="${item.label}"><span></span></button>`).join('')}
+          </div>
+          <div class="step-label"><b id="step-name"></b>
+            <button type="button" class="recall-toggle" data-action="recall" aria-pressed="${lessons.recall}" title="뜻과 정답을 가리고 떠올려 본 뒤 확인합니다">${icon('eye')} 가리고 외우기</button>
+          </div>
+        </header>
+        <div class="lesson-viewport"><section class="step-card" id="lesson-stage" aria-label="학습 카드"></section></div>
+        <nav class="lesson-nav" aria-label="단계 이동">
+          <button class="button" type="button" id="lesson-prev" data-action="prev">${icon('left')} 이전</button>
+          <span class="lesson-pos" id="lesson-pos" aria-hidden="true"></span>
+          <button class="button primary" type="button" id="lesson-next" data-action="next"></button>
+        </nav>
+        <p class="lesson-tip"><span class="keys">← → 방향키로 넘기고, 숫자 키로 답을 고를 수 있어요.</span><span class="touch">카드를 옆으로 밀어서 넘길 수 있어요.</span></p>
+        <p class="sr-only" id="step-status" aria-live="polite"></p>
+      </div>`;
+    bindSwipe(byId('lesson-stage'));
+    drawStep(0);
+  }
+
+  function lessonKeydown(event) {
+    if (!lesson || !byId('lesson-stage') || event.altKey || event.ctrlKey || event.metaKey) return;
+    if (document.querySelector('dialog[open]') || document.body.classList.contains('menu-open')) return;
+    if (event.target instanceof Element && event.target.closest('input, select, textarea, [contenteditable]')) return;
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      advance();
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      retreat();
+    } else if (/^[1-4]$/.test(event.key)) {
+      const step = lesson.steps[lesson.step];
+      if (step.kind !== 'quiz') return;
+      const option = choiceOrder(step.question)[Number(event.key) - 1];
+      if (option !== undefined) answerQuiz(option);
+    }
+  }
+
+  function handleLessonClick(button) {
+    if (!lesson) return false;
+    if (button.dataset.goto !== undefined) goStep(Number(button.dataset.goto));
+    else if (button.dataset.answer !== undefined) answerQuiz(Number(button.dataset.answer));
+    else if (button.dataset.reveal) reveal(button.dataset.reveal);
+    else if (button.dataset.action === 'prev') retreat();
+    else if (button.dataset.action === 'next') advance();
+    else if (button.dataset.action === 'recall') toggleRecall(button);
+    else return false;
+    return true;
+  }
+
+  function renderRoute(forceFocus = false) {
+    viewportObserver?.disconnect();
+    let [requested = '',detail,stepParam] = location.hash.slice(1).split('/');
+    if (requested === 'notes' && noteById.has(detail)) {
+      history.replaceState(null,'','#learn/' + detail);
+      requested = 'learn';
+    }
+    let view = ['notes','learn','summary','exam','wrong','hints','result'].includes(requested) ? requested : 'home';
+    const note = view === 'learn' || view === 'summary' ? noteById.get(detail) ?? null : null;
+    if (view === 'learn' && !note) {
+      history.replaceState(null,'','#notes');
+      view = 'notes';
+    }
+    if (view !== 'learn') lesson = null;
+    const unit = note?.unit ?? (unitById.has(detail) ? detail : '');
+    const unitItem = unitById.get(unit);
+    const title = primaryNav.find(([key]) => key === view)?.[1] ?? '모의고사 결과';
+    const trail = view === 'learn' ? ['개념 학습',unitItem.title,note.title] : view === 'notes' && unitItem ? ['개념 학습',unitItem.title] : [title];
+    const changed = selectedRoute !== location.hash;
+    selectedRoute = location.hash;
+    setNavOpen(false);
+    renderSidebar(view,unit,note?.id);
+    byId('breadcrumb').innerHTML = [subject.name,...trail].map((part,index,all) => index === all.length - 1 ? `<b>${part}</b>` : `<span>${part}</span>${icon('chevron')}`).join('');
+    if (changed || forceFocus) {
+      main.focus({preventScroll:true});
+      window.scrollTo(0,0);
+    }
+    switch (view) {
+      case 'notes': unitItem ? renderUnit(unitItem) : renderCourse(); break;
+      case 'learn': renderLesson(note,stepParam); break;
+      case 'summary': renderSummary(unit,note?.id); break;
+      case 'hints': renderHints(); break;
+      case 'exam':
+        if (state.session && !unit) renderExam();
+        else renderConfig(unit || 'all',Boolean(state.session));
+        break;
+      case 'result': renderResult(); break;
+      case 'wrong': renderWrong(); break;
+      default: renderHome();
+    }
+  }
+
+  function updateSearch() {
+    const query = byId('search-input').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = notes.filter(note => {
+      const searchable = [note.title,note.page,note.cue,...note.terms.flat(),...(note.sheet ?? []),unitById.get(note.unit).title].join(' ').toLowerCase();
+      return query.every(word => searchable.includes(word));
+    });
+    byId('search-results').innerHTML = matches.map(note => `<a class="search-result" href="${noteHref(note.id)}"><strong>${note.title}</strong><small>${lessons.done[note.id] ? '완료 · ' : ''}${pageLabel(note)}</small></a>`).join('') || '<p class="small muted">일치하는 개념이 없습니다.</p>';
   }
 
   function setTheme(theme) {
@@ -562,74 +1280,10 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
     return `<header class="page-head"><h1>${title}</h1><p>${description}</p></header>`;
   }
 
-  function renderHome() {
-    const latest = state.latest;
-    const examLabel = state.session ? '모의고사 이어 풀기' : '모의고사 풀기';
-    const featured = [[1,'목표값 찾기 메뉴'],[3,'고급 필터 OR 조건'],[10,'피벗 값 필드 설정'],[15,'차트 종류 변경']];
-    main.innerHTML = `
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-art" aria-hidden="true"><div class="sheet-preview"><div class="sheet-preview-top"></div><div class="sheet-preview-grid"><i></i></div></div></div>
-        <div class="hero-content">
-          <h1 class="hero-title" id="hero-title">사무행정<br><span>2회고사 대비</span></h1>
-          <p>2026학년도 1학기 정리표의 Excel 메뉴와 작업 순서를 익히고 모의고사로 복습하세요.</p>
-          <div class="actions">
-            <a class="button primary" href="#exam">${icon('shuffle')} ${examLabel}</a>
-            <a class="button" href="#notes">핵심 개념 보기 ${icon('right')}</a>
-          </div>
-        </div>
-      </section>
-      <div class="overview">
-        <section aria-labelledby="home-notes">
-          <div class="section-head"><h2 id="home-notes">핵심 개념</h2><a class="text-link" href="#notes">전체 보기 ${icon('right')}</a></div>
-          <div class="unit-grid">
-            ${units.map(unit => `<a class="unit-card" href="#notes/${unit.id}" ${unitStyle(unit)}>
-              ${unitIcon(unit)}<span><strong>${unit.title}</strong><small>${unit.subtitle}</small></span><span class="unit-arrow">${icon('chevron')}</span>
-            </a>`).join('')}
-          </div>
-        </section>
-        <section class="overview-side" aria-labelledby="home-hints">
-          <div class="section-head"><h2 id="home-hints">시험 힌트</h2><a class="text-link" href="#hints">20개 항목 ${icon('right')}</a></div>
-          <div class="panel hint-panel">
-            ${featured.map(([number,title]) => {
-              const [,page,id] = hints[number - 1];
-              return `<a class="hint-line" href="${noteHref(id)}"><span class="hint-no">${String(number).padStart(2,'0')}</span><strong>${title}</strong><span>${page}</span></a>`;
-            }).join('')}
-          </div>
-          <div class="study-stats">
-            <a class="stat-card" href="${latest ? '#result' : '#exam'}"><span>최근 점수</span><strong>${latest ? latest.score + '점' : '—'}</strong></a>
-            <a class="stat-card" href="#wrong"><span>다시 풀 오답</span><strong>${Object.keys(state.wrong).length}문제</strong></a>
-          </div>
-        </section>
-      </div>`;
-  }
-
-  function renderNotes(unit, openId) {
-    const displayed = unit ? [unitById.get(unit)] : units;
-    main.innerHTML = pageHead('개념 정리','정리표의 메뉴 경로와 작업 방법을 단원별로 확인하세요.') + `
-      <nav class="pills" aria-label="개념 단원 선택">
-        <a class="pill" href="#notes" ${!unit ? 'aria-current="page"' : ''}>전체</a>
-        ${units.map(item => `<a class="pill" href="#notes/${item.id}" ${item.id === unit ? 'aria-current="page"' : ''}>${item.title}</a>`).join('')}
-      </nav>
-      ${displayed.map(item => `<section class="concept-group" aria-labelledby="head-${item.id}">
-        <div class="group-head">${unitIcon(item)}<h2 id="head-${item.id}">${item.title}</h2></div>
-        ${notes.filter(note => note.unit === item.id).map(note => `
-          <details class="note" id="${note.id}" ${note.id === openId ? 'open' : ''}>
-            <summary><span class="note-title">${note.title}</span><span class="note-page">${note.page}</span>${icon('chevron')}</summary>
-            <div class="note-body">
-              <dl class="terms">${note.terms.map(([term,definition]) => `<div class="term"><dt>${term}</dt><dd>${definition}</dd></div>`).join('')}</dl>
-              <div class="callout"><strong>암기 단서</strong> ${note.cue}</div>
-              ${renderSource(note.source)}
-              <div class="note-actions"><a class="text-link" href="#exam/${item.id}">이 단원 문제 풀기 ${icon('right')}</a></div>
-            </div>
-          </details>`).join('')}
-      </section>`).join('')}`;
-    if (openId) byId(openId).scrollIntoView({block:'start'});
-  }
-
   function renderHints() {
-    main.innerHTML = pageHead('시험 힌트','정리표 두 장의 순서입니다. 항목을 누르면 관련 메뉴 경로와 작업 방법이 열립니다.') + `
+    main.innerHTML = pageHead('시험 힌트','정리표 두 장의 20개 항목과 정답입니다. 항목을 누르면 해당 개념을 단계별로 학습합니다.') + `
       <table class="hint-table" aria-label="시험 힌트 20개">
-        <thead><tr><th scope="col">번호</th><th scope="col">정리표 항목</th><th scope="col">출처</th></tr></thead>
+        <thead><tr><th scope="col">번호</th><th scope="col">정리표 항목 · 정답</th><th scope="col">출처</th></tr></thead>
         <tbody>${hints.map(([title,page,id,detail],index) => `<tr>
           <td>${String(index + 1).padStart(2,'0')}</td>
           <td><a href="${noteHref(id)}">${title}</a>${detail ? `<small>${detail}</small>` : ''}</td>
@@ -894,43 +1548,6 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
       </div>`;
   }
 
-  function renderRoute(forceFocus = false) {
-    const [requested,detail] = location.hash.slice(1).split('/');
-    const view = ['notes','exam','wrong','hints','result'].includes(requested) ? requested : 'home';
-    const openNote = view === 'notes' ? noteById.get(detail) : null;
-    const unit = openNote?.unit ?? (unitById.has(detail) ? detail : '');
-    const title = primaryNav.find(([key]) => key === view)?.[1] ?? '모의고사 결과';
-    const changed = selectedRoute !== location.hash;
-    selectedRoute = location.hash;
-    setNavOpen(false);
-    renderSidebar(view,unit);
-    byId('breadcrumb').innerHTML = `<span>사무행정</span>${icon('chevron')}<b>${title}</b>`;
-    if (changed || forceFocus) {
-      main.focus({preventScroll:true});
-      window.scrollTo(0,0);
-    }
-    switch (view) {
-      case 'notes': renderNotes(unit,openNote?.id); break;
-      case 'hints': renderHints(); break;
-      case 'exam':
-        if (state.session && !unit) renderExam();
-        else renderConfig(unit || 'all',Boolean(state.session));
-        break;
-      case 'result': renderResult(); break;
-      case 'wrong': renderWrong(); break;
-      default: renderHome();
-    }
-  }
-
-  function updateSearch() {
-    const query = byId('search-input').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    const matches = notes.filter(note => {
-      const searchable = [note.title,note.page,note.cue,...note.terms.flat(),unitById.get(note.unit).title].join(' ').toLowerCase();
-      return query.every(word => searchable.includes(word));
-    });
-    byId('search-results').innerHTML = matches.map(note => `<a class="search-result" href="${noteHref(note.id)}"><strong>${note.title}</strong><small>${note.page}</small></a>`).join('') || '<p class="small muted">일치하는 개념이 없습니다.</p>';
-  }
-
   function openSearch() {
     const dialog = byId('search-dialog');
     if (dialog.open || byId('submit-dialog').open) return;
@@ -974,6 +1591,7 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
       openSearch();
     }
     if (event.key === 'Escape' && byId('sidebar').classList.contains('open')) setNavOpen(false);
+    lessonKeydown(event);
   });
   document.querySelector('.skip-link').addEventListener('click',event => {
     event.preventDefault();
@@ -994,6 +1612,7 @@ topic('chart-callout','chart','차트에 둥근 사각형 설명선 넣기',[
     const button = event.target.closest('button');
     if (!button || button.disabled) return;
     button.closest('#sheet-dialog')?.close();
+    if (handleLessonClick(button)) return;
     if (button.dataset.jump !== undefined && state.session) {
       state.session.index = Number(button.dataset.jump);
       saveState();
