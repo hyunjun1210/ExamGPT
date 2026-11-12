@@ -337,16 +337,16 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
   const library = [
     {
       id: 'cg', title: '컴퓨터그래픽', short: 'CG', edition: '기말 대비', tone: 'violet', glow: '#8b6cff', art: 'torus',
-      href: 'computer-graphics.html', storage: 'cg-exam-study-v1',
-      lede: '교과서의 빨간 표시와 마지막 힌트지로 정리한 개념을 읽고, 무작위 모의고사로 복습하세요.',
+      href: 'computer-graphics.html', storage: 'cg-exam-study-v1', lessons: 'cg-exam-lessons-v1', concepts: 25,
+      lede: '교과서 빨간 표시와 힌트지 25개 항목을 한 단계씩 넘기며 익히고, 확인 문제와 모의고사로 시험을 대비하세요.',
       topics: ['3차원 조형물', '애니메이션', '웹 디자인', '프리미어 프로·VR'],
       specs: [[25, '개념', '개'], [83, '연습 문제', '개']],
       keywords: 'cg graphics 그래픽 모델링 요지경 레이아웃 블리드'
     },
     {
       id: 'office', title: '사무행정', short: '사무', edition: '2회고사 대비', tone: 'mint', glow: '#2bc79a', art: 'sheet',
-      href: 'office-administration.html', storage: 'office-exam-study-v1',
-      lede: '2026학년도 1학기 정리표의 Excel 메뉴와 작업 순서를 익히고 모의고사로 복습하세요.',
+      href: 'office-administration.html', storage: 'office-exam-study-v1', lessons: 'office-exam-lessons-v1', concepts: 20,
+      lede: '정리표 두 장의 20개 항목을 한 장씩 넘기며 외우고, 확인 문제와 모의고사로 점검하세요.',
       topics: ['목표값 찾기', '고급 필터', '부분합', '피벗 테이블', '차트'],
       specs: [[20, '정리표 항목', '개'], [60, '연습 문제', '개']],
       keywords: 'excel 엑셀 스프레드시트 정리표'
@@ -421,11 +421,23 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
     </span>`;
 
   /* ---------- 학습 기록 ---------- */
-  // 과목 페이지가 남긴 {session, latest, wrong} 기록을 요약한다.
-  function readRecord(key) {
+  // 과목 페이지의 개념 학습 기록 {done, last}에서 완료 개수와 이어서 볼 개념을 뽑는다.
+  function readLessons(book) {
     let stored;
-    try { stored = JSON.parse(localStorage.getItem(key)); } catch { return null; }
-    if (!stored || typeof stored !== 'object') return null;
+    try { stored = JSON.parse(localStorage.getItem(book.lessons)); } catch { return null; }
+    if (!stored || typeof stored.done !== 'object' || !stored.done) return null;
+    const done = Math.min(book.concepts, Object.keys(stored.done).length);
+    const last = typeof stored.last?.id === 'string' && /^[\w-]+$/.test(stored.last.id) ? stored.last : null;
+    if (!done && !last) return null;
+    return {done, total: book.concepts, last: last && !stored.done[last.id] ? last.id : null, at: Number(last?.at) || 0};
+  }
+
+  // 과목 페이지가 남긴 {session, latest, wrong} 기록과 개념 학습 기록을 요약한다.
+  function readRecord(book) {
+    const lessons = book.lessons ? readLessons(book) : null;
+    let stored;
+    try { stored = JSON.parse(localStorage.getItem(book.storage)); } catch { stored = null; }
+    if (!stored || typeof stored !== 'object') return lessons ? {session: null, latest: null, wrong: 0, lessons, at: lessons.at} : null;
     const items = Array.isArray(stored.session?.items) ? stored.session.items : [];
     const session = items.length ? {
       answered: items.filter(item => item && item.choice !== null && item.choice !== undefined).length,
@@ -437,8 +449,8 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
       at: (Number(stored.latest.started) || 0) + (Number(stored.latest.duration) || 0)
     } : null;
     const wrong = stored.wrong && typeof stored.wrong === 'object' ? Object.keys(stored.wrong).length : 0;
-    if (!session && !latest && !wrong) return null;
-    return {session, latest, wrong, at: Math.max(session?.at || 0, latest?.at || 0)};
+    if (!session && !latest && !wrong && !lessons) return null;
+    return {session, latest, wrong, lessons, at: Math.max(session?.at || 0, latest?.at || 0, lessons?.at || 0)};
   }
   const stateOf = book => records.has(book.id) ? 'reading' : 'new';
   const relative = new Intl.RelativeTimeFormat('ko', {numeric: 'auto'});
@@ -464,6 +476,7 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
   function chipsHtml(record) {
     if (!record) return '<span class="chip quiet">아직 펼치지 않음</span>';
     return [
+      record.lessons && `<span class="chip">개념 ${record.lessons.done}/${record.lessons.total}</span>`,
       record.session && `<span class="chip live">모의고사 ${record.session.answered}/${record.session.total}</span>`,
       record.latest && `<span class="chip">최근 ${record.latest.score}점</span>`,
       record.wrong && `<span class="chip warn">오답 ${record.wrong}</span>`
@@ -497,7 +510,7 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
           <a class="pill secondary" href="${esc(book.href)}#exam">${record?.session ? '모의고사 이어 풀기' : '모의고사 풀기'}</a>
         </div>
         <nav class="quick" aria-label="${esc(book.title)} 바로가기">
-          <a href="${esc(book.href)}#notes">개념 정리 ›</a>
+          <a href="${esc(book.href)}#notes">개념 학습 ›</a>
           <a href="${esc(book.href)}#hints">시험 힌트 ›</a>
           <a href="${esc(book.href)}#wrong">오답 노트 ›</a>
           ${record?.latest ? `<a href="${esc(book.href)}#result">최근 결과 ›</a>` : ''}
@@ -517,20 +530,29 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
     $('continue').hidden = !reading.length;
     $('continue-summary').textContent = wrongTotal ? `다시 풀 오답 ${wrongTotal}문제` : '';
     $('continue-list').innerHTML = reading.map(book => {
-      const {session, latest, wrong, at} = records.get(book.id);
+      const {session, latest, wrong, lessons, at} = records.get(book.id);
       const href = esc(book.href);
+      const lessonLink = lessons?.last ? ['#learn/' + lessons.last, '개념 이어서'] : ['#notes', '개념 학습'];
       let line, percent = null, links;
       if (session) {
         line = `모의고사 진행 중 · ${session.total}문항 중 ${session.answered}문항 응답`;
         percent = session.answered / session.total * 100;
-        links = [['#exam', '이어 풀기'], wrong ? ['#wrong', `오답 ${wrong}문제`] : ['#notes', '개념 정리']];
+        links = [['#exam', '이어 풀기'], wrong ? ['#wrong', `오답 ${wrong}문제`] : lessonLink];
       } else if (latest) {
         line = `최근 모의고사 ${latest.score}점`;
         percent = latest.score;
         links = [wrong ? ['#wrong', `오답 ${wrong}문제 다시 보기`] : ['#exam', '새 모의고사'], ['#result', '결과 보기']];
-      } else {
+      } else if (wrong) {
         line = `다시 풀 오답 ${wrong}문제`;
         links = [['#wrong', '오답 노트 열기'], ['#exam', '새 모의고사']];
+      } else {
+        line = `개념 학습 ${lessons.done}/${lessons.total} 완료`;
+        percent = lessons.done / lessons.total * 100;
+        links = [lessonLink, ['#exam', '모의고사 풀기']];
+      }
+      if (lessons && (session || latest || wrong)) {
+        line += ` · 개념 ${lessons.done}/${lessons.total}`;
+        if (!links.some(([hash]) => hash === lessonLink[0])) links.push(lessonLink);
       }
       const when = timeAgo(at);
       return `<article class="resume tone-${book.tone}">
@@ -700,7 +722,7 @@ mark { padding: 0 1px; border-radius: 3px; color: inherit; background: color-mix
   }
 
   function refresh() {
-    records = new Map(library.map(book => [book.id, readRecord(book.storage)]).filter(([, record]) => record));
+    records = new Map(library.map(book => [book.id, readRecord(book)]).filter(([, record]) => record));
     for (const book of library) slides.get(book.id).querySelector('.chips').innerHTML = chipsHtml(records.get(book.id));
     updateCounts();
     renderContinue();
